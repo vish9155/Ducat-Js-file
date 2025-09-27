@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="show()">
+    <!-- <script src="date_time.js"></script> -->
+
+    <h1 id="res"></h1>
+
+</body>
+
+<!-- <script>
+
+
+    // Method 1-it is so simple
+
+
+
+    let res=document.querySelector("#res")
+    function show()
+    {
+        let date=new Date().toLocaleTimeString();
+        res.innerHTML=date
+        setInterval(show,1000)        
+    }
+
+</script> -->
+
+
+<script>
+
+    let res=document.querySelector("#res")
+    function show() {
+        let date = new Date();
+        let h = date.getHours()
+        let m = date.getMinutes()
+        let s = date.getSeconds()
+        let session = "PM"
+
+        if (h > 12) {
+            h = h - 12
+        }
+
+        h ? h : '0' + h
+        m ? m : '0' + m
+        s ? s : "0" + s
+
+        if (h > 12) {
+            session == "AM"
+        }
+       
+        let time=h+":"+m+":"+s+" "+session
+        res.innerHTML=time;
+        setInterval(show,1000)        
+
+    }
+
+</script>
+
+</html>

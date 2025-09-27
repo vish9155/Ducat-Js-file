@@ -1,0 +1,533 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="res">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia sequi rem, consequatur suscipit minima nobis enim quam autem soluta vitae quod obcaecati, debitis maxime commodi et repellat reprehenderit fugit iure.
+    </h1>
+    <button id="btn">click</button>
+    <script>
+        let res=document.querySelector("#res");
+        let btn=document.querySelector("#btn");
+
+        res.addEventListener("click",()=>{
+            res.innerHTML="Hello Dom"
+        })
+   btn.addEventListener("click",()=>{
+    res.style.color="red"
+   })
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Add</button>
+    <ul id="container">
+        
+    </ul>
+    <script>
+        let btn=document.querySelector("#btn");
+        let container=document.querySelector("#container");
+        btn.addEventListener("click",()=>{
+            let elm=document.createElement("li");
+            elm.innerHTML="Apple"
+            container.appendChild(elm)
+        })
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" onkeyup="getdata()" id="inputdata">
+    <p id="para">Paragraph</p>
+    <script>
+       
+        let para=document.querySelector("#para")
+
+        function getdata()
+        {
+             let input=document.querySelector("#inputdata").value;
+            console.log(input)
+            para.innerHTML=input
+        }
+        
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../images/pannerbuttermasala.jpg" id="img1" alt="">
+
+    <button onclick="show()" id="btn">change</button>
+    <script>
+      let newimg="../images/pannermalaikopta.jpg"
+      let oldsrc="../images/pannerbuttermasala.jpg"
+      let btn=document.querySelector("#btn")
+        console.log(newimg)
+        function show()
+        {
+         let image=document.querySelector("#img1");
+
+         if(btn.innerHTML==="change")
+         {
+            image.src=newimg;
+            btn.innerHTML="Reset"
+         }
+        else{
+            image.src =oldsrc
+            btn.innerHTML="change"
+        }
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="heloo()">
+    <form action=""  onsubmit="fun()">
+        <input type="text" id="name" placeholder="Enter your name">
+        <br><br>
+        <input type="password" id="pass" placeholder="Enter your password">
+        <br>
+        <br>
+        <input type="email" id="email" placeholder="Enter Your Mail">
+        <br>
+        <br>
+        <button>submit</button>
+    </form>
+    <script>
+
+    function heloo()
+    {
+        alert("Welcome to dom")
+    }
+        function fun() {
+            let name = document.querySelector("#name").value
+            let email = document.querySelector("#email").value
+            let pass = document.querySelector("#pass").value
+            if (name == "" || pass == "" || email == "") {
+                alert("Plaese Fill the form Field")
+
+            }
+            else {
+                alert("Form Data is SucessFully Submitted")
+            }
+
+
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mydiv">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente fugiat molestias eos impedit labore hic
+            rem commodi consectetur atque assumenda, veniam animi quasi praesentium, temporibus officiis laudantium?
+            Hic, est natus.</p>
+        <p>Quibusdam perspiciatis quaerat ipsum, aperiam fugit, accusamus adipisci quas eveniet, provident sint eos
+            repellat magnam dolore. Impedit ratione architecto autem magni amet, voluptatibus aspernatur quasi
+            temporibus quaerat a suscipit ducimus?</p>
+        <p>Incidunt esse deserunt nulla nobis ullam enim eius pariatur. Consectetur placeat dolor ex! Quas quidem
+            voluptatum laudantium blanditiis? Dolorum ducimus odio rem! Nesciunt ullam voluptates fugit excepturi iusto
+            unde ab.</p>
+        <p>Ipsa, numquam velit? Tenetur consequatur sequi debitis deserunt dolores esse ratione, voluptate distinctio
+            placeat adipisci voluptates minima explicabo culpa sed magni cum ullam cumque soluta! Perspiciatis molestias
+            sapiente possimus hic.</p>
+        <p>Nihil accusantium perferendis blanditiis tempora consequatur maxime nobis neque quisquam odit, vitae non,
+            assumenda suscipit architecto, ipsum rem sed nesciunt magni a reprehenderit esse facilis veritatis nemo
+            quos? Ratione, nam!</p>
+        <p>Quam quis aperiam iusto. Cum perferendis error tempore, eius, sint necessitatibus earum labore eligendi
+            voluptatum molestias quas quidem doloribus, recusandae fuga. Saepe, rem. Magni officiis quo, fugiat quis ex
+            cum.</p>
+        <p>Velit, in temporibus ab eligendi perferendis error obcaecati earum animi provident asperiores expedita atque
+            at nihil suscipit mollitia aperiam rerum est harum consequuntur repellendus distinctio. Dolore maiores eaque
+            fugiat quaerat.</p>
+        <p>Magni id suscipit, vero voluptas facere error natus ex omnis expedita inventore minima accusamus, amet est
+            cupiditate distinctio nemo adipisci, voluptatum quod consequatur ullam? Ducimus officia esse unde quis
+            incidunt!</p>
+        <p>Sint quia molestias deserunt nostrum, recusandae sit laborum. Pariatur minima vel aliquam hic dolore
+            repudiandae voluptatibus iure expedita eius in cum explicabo nobis provident, nisi, harum voluptate beatae
+            eveniet necessitatibus.</p>
+        <p>Nostrum nulla dicta illum magni iusto cum fuga minima modi assumenda recusandae necessitatibus harum mollitia
+            ratione delectus, reiciendis doloremque impedit itaque! Velit tempora officiis unde ipsam laudantium
+            corporis sequi? Beatae.</p>
+        <h1>hello</h1>
+        <h2>pinky</h2>
+        <h3>vishal</h3>
+        <h4>kushal</h4>
+        <h5>sanjay</h5>
+        <h6>ajay</h6>
+        <button onclick="countchildren()">click</button>
+    </div>
+    <script>
+        function countchildren() {
+            let mydiv = document.querySelector(".mydiv");
+            mydiv = mydiv.children.length;
+            console.log(mydiv)
+        }
+    </script>
+</body>
+
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="toggle()" id="btn">show</button>
+    <p id="para">Lorem ipsum dolor sit amebtnt consectetur adipisicing elit. Deserunt vel, nostrum, hic tenetur in a
+        similique quasi dignissimos, voluptatum unde dolorem iusto voluptatem porro! Libero tempore aspernatur commodi
+        ipsam? Possimus.</p>
+    <script>
+
+
+        function toggle() {
+            let para = document.querySelector("#para")
+            let btn = document.querySelector("#btn");
+            
+            console.log(para)
+
+            if (btn.innerHTML === 'show') {
+                btn.innerHTML = "Hide"
+                para.style.display="none"
+            }
+            else {
+                btn.innerHTML = "show";
+               para.style.display="block"
+            }
+        }
+
+    </script>
+
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="item">
+        <li>Ram</li>
+        <li>Hanuman</li>
+        <li>KalBhairav</li>
+        <li>Durga</li>
+        <li>Kali</li>
+    </ul>
+    <input type="text" id="input">
+    <button onclick="fun()" >submit</button>
+</body>
+<script>
+    let item=document.querySelector(".item")
+    setTimeout(()=>{
+        item.style.color="red"
+
+    },1000)
+
+    let input=document.querySelector("#input")
+
+    function fun()
+    {
+       input=input.value="hello"
+        alert(input)
+        
+    }
+</script>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #mydiv{
+        border: 1px solid  black;
+        width: 400px;
+        height: 400px;
+        background-color: chocolate;
+    }
+</style>
+<body>
+    <div id="mydiv">
+
+    </div>
+</body>
+<script>
+    let colordata=["red",'blue','green','yellow','pink','navy',"gray"];
+    let mydiv=document.querySelector("#mydiv")
+    let index=0;
+
+    setInterval(()=>{
+
+        if(index===colordata.length)//jab default value do tab length  nahi to length-1
+        {
+            index=0
+        }
+        else{
+           index++
+        }
+        mydiv.style.background=colordata[index]
+    },2000)
+
+</script>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="tittle">Document</title>
+    <style>
+        #mydiv {
+            border: 1px solid black;
+            width: 400px;
+            height: 400px;
+            background-color: chocolate;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mydiv">
+
+    </div>
+    <br>
+    <br>
+    <form action="" onsubmit="valid()">
+        <input type="text" id="emaildata">
+        <br><br>
+        <button>submit</button>
+    </form>
+    <button onclick="change()">click</button>
+
+</body>
+<script>
+
+
+    function valid() {
+        let emaildata = document.querySelector("#emaildata");
+        if (emaildata.value == "") {
+            alert("Please write a mail")
+        }
+        else if (!emaildata.endsWith(".com")) {
+            emaildata.style.background = " 5px solid red"
+
+        }
+        else {
+            emaildata.style.border = '6px solid black'
+        }
+
+    }
+    function change(event) {
+
+
+        let mydiv = document.querySelector("#mydiv");
+
+        let colordata = ['red', 'blue', 'pink', 'yellow', 'violet', 'orange', 'gray']
+        let index = 0;
+
+        if (index === colordata.length - 1) {
+            index = 0
+        }
+        else {
+            index++
+
+        }
+
+        mydiv.style.background = colordata[index]
+        index++
+
+        let b = document.querySelector("#tittle");
+
+        b.innerHTML = "document.tittle"
+
+
+
+    }
+
+</script>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="para" onmouseenter="fun()" onmouseleave="fun2()">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas nisi veritatis exercitationem iure, quia
+        molestias quas quam vero autem odit id magni. Quo temporibus, iure iusto ut consectetur animi nostrum, ab vitae
+        nesciunt et fuga deserunt molestias consequuntur odio eum vel voluptas corporis, suscipit perspiciatis
+        doloremque quod. Quos consequatur molestias, explicabo blanditiis ad nam molestiae porro nulla, provident esse,
+        fugiat exercitationem ea enim dignissimos maiores facere quae veniam inventore animi? Harum explicabo, quisquam
+        modi cumque veritatis deserunt ab nam! Id iure numquam eius harum, in excepturi quam rerum modi aspernatur eos
+        corrupti, tempore impedit quos? Rerum sint dolores eius rem? Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit. Nam cum tempora id eaque corrupti veritatis dicta recusandae numquam optio soluta qui necessitatibus
+        debitis quibusdam rerum veniam eos, officia quod ea reprehenderit inventore molestias, blanditiis maiores sit.
+        Dolorum amet magni natus id quasi provident, modi maiores eius quod sit explicabo similique, incidunt repellat
+        ipsam placeat voluptatem doloremque earum quo consequuntur accusantium nostrum nulla, deserunt exercitationem
+        aliquam. Magni repellat temporibus commodi obcaecati provident sequi ratione iure placeat dolores cumque enim
+        hic, quos repellendus odit nemo quia eius eum non quo tempora fuga ipsum cum necessitatibus voluptatum. Ipsum
+        accusantium voluptate quo eius assumenda.
+    </p>
+    <p class="para" onmouseenter="fun()" onmouseleave="fun2()">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Error suscipit autem doloremque placeat velit
+        est veniam molestias consequuntur beatae repellat quidem quo, voluptatum, dolorum asperiores dolor. Voluptatibus
+        corrupti minus iusto!</p>
+    <p class="para" onmouseenter="fun()" onmouseleave="fun2()">Facere maiores, expedita ipsam reprehenderit doloremque
+        cumque unde veritatis accusantium nemo rerum
+        cum pariatur molestiae, assumenda alias nisi. Impedit dicta alias nam dolore quidem autem similique, sed
+        reiciendis ipsa nisi.</p>
+    <p class="para" onmouseenter="fun()" onmouseleave="fun2()">Qui molestias nostrum ipsum facilis, obcaecati laudantium
+        iste earum recusandae maiores temporibus!
+        Odit dolorem animi ut explicabo officia enim, exercitationem hic ipsum, aliquam minima sequi, repellendus totam
+        modi iste consequuntur?</p>
+    <p class="para" onmouseenter="fun()" onmouseleave="fun2()">Soluta aliquid tempore pariatur quis vel sint fuga, ut
+        dolorem, porro laboriosam eligendi quasi illo
+        maxime. Earum vero magni odio officiis dolore minima hic laboriosam vitae, aspernatur assumenda eos natus.</p>
+    <p class="para" onmouseenter="fun()" onmouseleave="fun2()">Eos ipsa dolorum atque itaque et, similique iure,
+        asperiores repellat accusamus officiis ab quae
+        tenetur. Pariatur deleniti est porro velit, illum quas, animi dicta consectetur quis tempora blanditiis dolore
+        quisquam?</p>
+    <button id="btn" onclick="toggle()">show</button>
+</body>
+<script>
+    ///  let para = document.querySelectorAll(".para");
+    //para.forEach(()=>{
+    //    console.log("hello")
+    //})
+   
+
+    function fun() {
+         let para = document.getElementsByTagName("P");
+    let btn = document.querySelector("#btn")
+    let i;
+    for(i=0;i<para.length;i++)
+    {
+        para[i]
+    }
+        para[i].style.color = "red"
+    }
+    function fun2() {
+         let para = document.getElementsByTagName("P");
+    let btn = document.querySelector("#btn")
+    let i;
+    for(i=0;i<para.length;i++)
+    {
+        para[i]
+    }
+        para[i].style.color = "black"
+    }
+
+    function toggle() {
+        
+        if (btn.innerHTML === "show") {
+            para[i].style.display = "none"
+            btn.innerHTML = "Hide"
+        }
+        else {
+            para[i].style.display = "block"
+            btn.innerHTML = "show"
+        }
+    }
+
+
+
+</script>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolores illum tempora error excepturi iusto velit labore commodi fuga unde ullam nemo dicta natus autem id, quos accusantium quaerat quibusdam.</p>
+    <p class="para">Quae saepe reprehenderit, dolores corporis, magnam libero facere iusto quibusdam architecto veniam, dignissimos deleniti deserunt soluta blanditiis exercitationem repudiandae. Libero aliquid voluptatum doloribus ex ipsum at cumque repellat illo sit?</p>
+    <p class="para">Consequuntur sequi beatae molestias culpa rem dolorum laborum. Cum eaque consectetur tempora minima eum repellat debitis explicabo aliquid non. Inventore, laudantium veritatis odit officiis nemo consequuntur suscipit. Hic, reprehenderit similique.</p>
+    <p class="para">Rerum non natus, rem doloremque blanditiis eveniet quibusdam voluptate ea, consectetur alias iste nihil labore, expedita assumenda eum. Laboriosam, ad. Libero, nemo? Modi reprehenderit veniam nemo a ratione architecto labore.</p>
+    <p class="para">Reprehenderit ut nesciunt eaque. Temporibus iusto alias autem quam, eius fugit. Nisi, dicta itaque asperiores ea magni beatae nulla accusantium. Quisquam eaque odit dicta dolor sapiente quibusdam fugiat voluptatibus? Architecto.</p>
+    <p class="para">Odio voluptatem, adipisci odit asperiores magnam nisi? Corrupti ratione sapiente dolore repudiandae quisquam et fuga culpa accusantium! Minima ex nisi obcaecati, quis veniam alias necessitatibus tempora blanditiis vero perferendis provident.</p>
+    <p class="para">Obcaecati, impedit, amet voluptatibus nihil rem odio asperiores rerum itaque deleniti, officia facilis praesentium ex! In repellat deserunt nam non inventore ratione molestiae laudantium. Odit quasi repudiandae voluptatum iste vero.</p>
+    <p class="para">Cupiditate amet quibusdam placeat et animi ipsam explicabo repellat deleniti perferendis distinctio! Nesciunt dicta iste praesentium tenetur odio ipsum explicabo, facilis maiores quae accusamus, voluptatibus sit, assumenda vero? Voluptas, maxime.</p>
+    <p class="para">Itaque iusto adipisci eaque quisquam voluptate hic, placeat quidem cum, molestias, odit quod deleniti totam magnam culpa non. Distinctio consectetur quae odit nostrum corporis dolore deleniti illo cumque accusamus eveniet.</p>
+    <p class="para">Ex corporis debitis eos necessitatibus itaque sequi sapiente provident, sunt possimus quisquam. Dolore enim optio, voluptas tempora repellendus porro modi nulla, saepe quis obcaecati, veritatis nam deleniti beatae ut labore.</p>
+    <button id="btn" onclick="toggle()">Show</button>
+</body>
+<script>
+    function toggle()
+    {
+        let btn=document.querySelector("#btn");
+        let para=document.querySelectorAll(".para")
+        para.style.display="none"
+        
+    }
+</script>
+</html>

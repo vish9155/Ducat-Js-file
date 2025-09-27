@@ -1,0 +1,157 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .main {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .center {
+        width: 80%;
+        height: 80%;
+        background-color: black;
+        color: white;
+    }
+
+    #btn {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 1rem;
+        background: navy;
+        color: white;
+        cursor: pointer;
+    }
+
+    #para {
+        text-align: justify;
+        margin: 10px;
+        padding: 10px;
+        font-size: 1.8rem;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <button id="btn" onclick="fun()">change</button>
+            <p id="para">  Voluptatum vero assumenda voluptas quam eveniet doloribus optio commodi cumque quisquam nihil ipsam quas, modi doloremque error aliquam voluptatibus cupiditate fuga delectus veniam? Repellat culpa, inventore libero iste adipisci optio praesentium, possimus explicabo similique id placeat! Atque delectus veniam esse facere saepe cumque voluptatem architecto vitae dolorem. Placeat odio neque esse magnam ad laborum iste quidem, quasi laboriosam quod debitis! Voluptatem aliquam rem odit esse assumenda nobis adipisci, molestiae quibusdam culpa inventore porro nulla. Aliquam exercitationem placeat aperiam nihil, optio cumque beatae iusto itaque porro nostrum dolorem consequatur nobis asperiores blanditiis quam laboriosam ut, aliquid hic. Enim rerum consectetur cupiditate quaerat minima asperiores sequi perferendis nemo tenetur ex, in illum. Sed, similique fuga nostrum maiores repellendus consequatur error rerum vel ut ab. In hic sunt accusamus dignissimos laborum, optio ex repellendus debitis! Optio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi porro quidem qui at impedit
+                .</p>
+        </div>
+    </div>
+    <script>
+        let text = "at impedit incidunt eum nisi dolorem eaque officia iure corrupti nemo architecto culpa inventore, maiores deleniti excepturi pariatur provident sunt esse! Enim accusamus error quo laudantium neque dicta soluta maiores. Tenetur beatae dignissimos esse asperiores voluptatum eum temporibus dolorem eius atque eligendi officiis voluptatem ad sint fuga sunt sit amet exercitationem quo dolores tempore dicta, reiciendis omnis ullam rerum! Non perspiciatis tempore laudantium dolorum dignissimos iste dolores optio quod placeat saepe blanditiis, fugit sed eveniet ratione perferendis dolore officia, reiciendis dicta vero accusantium repellendus, dolorem tenetur expedita eius"
+        let text2="Voluptatum vero assumenda voluptas quam eveniet doloribus optio commodi cumque quisquam nihil ipsam quas, modi doloremque error aliquam voluptatibus cupiditate fuga delectus veniam? Repellat culpa, inventore libero iste adipisci optio praesentium, possimus explicabo similique id placeat! Atque delectus veniam esse facere saepe cumque voluptatem architecto vitae dolorem. Placeat odio neque esse magnam ad laborum iste quidem, quasi laboriosam quod debitis! Voluptatem aliquam rem odit esse assumenda nobis adipisci, molestiae quibusdam culpa inventore porro nulla. Aliquam exercitationem placeat aperiam nihil, optio cumque beatae iusto itaque porro nostrum dolorem consequatur nobis asperiores blanditiis quam laboriosam ut, aliquid hic. Enim rerum consectetur cupiditate quaerat minima asperiores sequi perferendis nemo tenetur ex, in illum. Sed, similique fuga nostrum maiores repellendus consequatur error rerum vel ut ab. In hic sunt accusamus dignissimos laborum, optio ex repellendus debitis! Optio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi porro quidem qui at impedit"
+        let btn = document.querySelector("#btn")
+        let para = document.querySelector("#para");
+        function fun() {
+            if (btn.innerHTML === "change") {
+                btn.innerHTML = "Reset"
+                para.innerHTML = text
+                para.style.color = "aqua"
+                btn.style.background = "aqua"
+            }
+            else {
+                btn.innerHTML = "change"
+                para.innerHTML = text2
+                para.style.color = "white"
+                btn.style.background = "navy"
+            }
+
+        }
+
+    </script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main {
+        width: 100%;
+        height: 100vh;
+        border-radius: 50%;
+        border: 1px solid #cea8a8;
+        background-color: rgb(155, 119, 119);
+    }
+</style>
+
+<body onload="change()">
+    <div>
+        <div onclick="show()" class="main">
+         <img src="../images/aloo pratha.jpg" alt="">
+                <img src="../images/vegcheeseburrger.jpg" alt="">
+                <img src="../images/vegbiryani.jpg" alt="">
+                <img src="../images/pannerburger.jpg" alt="">
+                <img src="../images/tawaroti.jpg" alt="">
+                <img src="../images/pizza2.jpg" alt="">
+                <img src="../images/pizza.jpg" alt="">
+                <img src="../images/pannermalaikopta.jpg" alt="">
+                <img src="../images/pannerbuttermasala.jpg" alt="">
+                <img src="../images/delux thali.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+<script>
+    let main = document.querySelector(".main")
+    let colorindex = ["red", "pink", "yellow", "aqua"];
+    // let i='aqua';
+    //  for(i of colorindex)
+    // {
+    //     console.log(i)
+    // }
+    //function change()
+    //{
+    // 
+    // 
+    // main.style.backgroundcolor=i
+    // i++
+
+    // setInterval(change,1000)
+
+    //}
+    //
+
+    let index = 0
+
+    function change() {
+        setInterval(() => {
+
+            main.style.background = colorindex[index];
+            if (index === colorindex.length - 1) {
+                index = 0
+            }
+            else {
+                index++
+            }
+
+        }, 2000)
+    }
+</script>
+
+</html>

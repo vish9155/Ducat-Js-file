@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Array is collection of hortoginious item in arrangement of contigious element it can contain duplicate item it
+        can store different datatype value it is mutable the array index is always start from 0. </h1>
+    <button onclick="show()">Show</button>
+    <button onclick="join()">join</button>
+    <button onclick="string()">string</button>
+    <button onclick="push()">push</button>
+    <button onclick="pop()">pop</button>
+    <button onclick="shift()">shift</button>
+    <button onclick="unshift()">unshift</button>
+    <button onclick="spliceAdd()">spliceDelete</button>
+    <button onclick="spliceAdd()">spliceAdd</button>
+    <button onclick="concat()">concat</button>
+    <button onclick="indexof()">indexof</button>
+    <button onclick="lastIndexof()">lastIndexof</button>
+    <button onclick="slice()">slice</button>
+    <button onclick="includes()">includes</button>
+    <button onclick="deleteitem()">deleteitem</button>
+    <button onclick="reduces()">Reduces</button>
+    <button onclick="sortArray()">sortstring</button>
+    <button onclick="sortnum()">sortnumber</button>
+    <button onclick="reverse()">reverse</button>
+    <h1 id="res"></h1>
+    <!-- <script src="script.js"></script> -->
+</body>
+<script>
+    /*let a =   Array(10);
+     document.writeln(a)
+     a[0] = "hello"
+     a[1] = "hello"
+     a[2] = "hello"
+     a[3] = "hello"
+     a[4] = "hello"
+     a[5] = "hello"
+     document.writeln(a)
+ */
+    //let arr = ["vishal", 'sam', `kunal`, `shekhar`, true, false, 90, 90.33, `vishal`]
+    /*for(let i of arr)
+    {
+        document.writeln("<br>"+i)
+    }*/
+
+    /* for(let i in arr)
+     {
+         document.writeln(`<br>${i}:${arr[i]}`)
+     }*/
+
+    let names = ['vishal', 'sam', 'arun', 'arjun', 'agarwal', 'vishal', 'ducat', 'neha', 'pooja', 'shalini'];
+    let name = ['yadav', 'rajput']
+    let a = [10, 15, 37, 238, 300, 445, 90, 55, 33, 222, 1]
+    let b = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    function show() {
+        let res = document.querySelector("#res").innerHTML = names;
+    }
+    function join() {
+        let res = document.querySelector("#res").innerHTML = names.join("")
+    }
+    function string() {
+        let res = document.querySelector("#res").innerHTML = names.toString()
+    }
+    function push() {
+        let a = names.push("yadavRaj")
+        let res = document.querySelector("#res").innerHTML = a
+    }
+    function pop() {
+        let a = names.pop()
+        let res = document.querySelector("#res").innerHTML = a
+    }
+    function shift() {
+        let a = names.shift()
+        let res = document.querySelector("#res").innerHTML = a
+    }
+    function unshift() {
+        let a = names.unshift('hello')
+        let res = document.querySelector("#res").innerHTML = a
+    }
+    function spliceDelete() {
+        let a = names.splice(2, 4)
+        let res = document.querySelector("#res").innerHTML = a
+    }
+    function spliceAdd() {
+        let a = names.splice(2, 0, "hello5", "data", "number")
+        let res = document.querySelector("#res").innerHTML = a
+    }
+    function concat() {
+        let a = names.concat(name)
+        let res = document.querySelector("#res").innerHTML = a
+    }
+    function lastIndexof() {
+        let a = names.lastIndexOf("vishal")
+        let res = document.querySelector("#res").innerHTML = a
+    }
+    function indexof() {
+        let a = names.indexOf("vishal")
+        let res = document.querySelector("#res").innerHTML = a
+    }
+    function includes() {
+        let a = names.includes("vishal")
+        let res = document.querySelector("#res").innerHTML = a
+    }
+    function slice() {
+        let a = names.slice(2, 5)
+        let res = document.querySelector("#res").innerHTML = a
+    }
+    function reverse() {
+        let a = names.reverse()
+        let res = document.querySelector("#res").innerHTML = a
+    }
+
+    function deleteitem() {
+        let a = delete names[6]
+        let res = document.querySelector("#res").innerHTML = a
+    }
+    function reduces() {
+        let a = b.reduce((prev, next) => (prev + next))
+        let res = document.querySelector("#res").innerHTML = a
+    }
+
+    function check(item) {
+        return item % 5 == 0
+    }
+    function sortArray() {
+        let a = names.sort()
+        let res = document.querySelector("#res").innerHTML = a
+
+    }
+    function sortnum() {
+        let A = a.sort((x, y) => x - y)
+        let res = document.querySelector("#res").innerHTML = A
+
+    }
+
+    console.log(a.find(check))//return ist item
+    console.log(a.findLast(check))//return last item
+    console.log(a.filter(check))// contain aresult of array
+    console.log(a.map(check))//it call one callback function for every element rturn true or false if exist or not
+    console.log(a.forEach(check))
+    //reduces function call callback function with two args previous or next ;
+    //forEach function call callback function for each elemenet retutn nothing;
+
+    let Employee = ['vishal', 20, 'trainner', 20000, 'hajipur']
+
+    let [Name, id, dsg, salary, city] = Employee
+
+
+    console.log(`
+    name   : ${Name}
+    id     : ${id}
+    dsg    : ${salary}
+    salary : ${salary}
+    city   : ${city}
+    `)
+
+
+
+</script>
+
+</html>
