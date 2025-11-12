@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="postdata(event)">
+        <input type="text" id="name" onkeyup="getdata(event)" placeholder="Name:"><br><br>
+        <input type="text" id="roll" onkeyup="getdata(event)" placeholder="Roll:"><br><br>
+        <input type="text" id="course" onkeyup="getdata(event)" placeholder="Course:"><br><br>
+        <button>submit</button>
+    </form>
+
+    <h1 id="hname">Name:</h1>
+    <h1 id="hroll">Roll:</h1>
+    <h1 id="hcourse">Course:</h1>
+
+</body>
+<script>
+
+    function getdata(event)
+    {
+        let input=event.target;
+        let heading=document.getElementById(`h${input.id}`)
+        heading.innerHTML=`${input.placeholder} ${input.value}`
+    }
+
+    function postdata(event)
+    {
+        event.preventDefault();
+
+        alert(`
+        
+        Name:${document.getElementById('name').value}
+        Roll:${document.getElementById('roll').value}
+        Course:${document.getElementById('course').value}
+
+        `)
+
+    }
+
+</script>
+</html>

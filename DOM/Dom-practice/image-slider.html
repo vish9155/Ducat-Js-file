@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .main {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .center {
+        width: 80%;
+        height: 80%;
+        background-color: #eaeaea;
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .images {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .top {
+        width: 100%;
+        height: 100%;
+    }
+
+    .top img {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+
+    .top img:first-child {
+        display: block;
+    }
+    .btn{
+        border: none;
+        background: none;
+        font-size: 2rem;
+        position: absolute;
+        cursor: pointer;
+        color: #eaeaea;
+    }
+
+    #btnleft{
+       top:45%;
+       left:"20px";
+    }
+    #btnright
+    {
+        top: 45%;
+      right: 20px;
+    }
+    .bottom{
+     
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        top: -10%;
+    }
+    .circle{
+         width: 20px;
+         height: 20px;
+         border: 1px solid #eaeaea;
+         border-radius: 50%;
+
+         background-color: #eaeaea;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <div class="images" onmouseenter="playpause('pause')" onmouseleave="playpause('play')">
+                <div class="top">
+                    <img src="../images/vegcheeseburrger.jpg" alt="">
+                    <img src="../images/tondorichicken.jpg" alt="">
+                    <img src="../images/pannerbuttermasala.jpg" alt="">
+                    <img src="../images/pizza.jpg" alt="">
+                    <img src="../images/pannermalaikopta.jpg" alt="">
+                    <img src="../images/vegbiryani.jpg" alt="">
+                         <div class="bottom">
+                <!-- <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div> -->
+            </div>
+                </div>
+           
+            </div>
+            <button id="btnleft" class="btn" onclick="prev()"><i class="fa-solid fa-chevron-left"></i></button>
+            <button id="btnright" class="btn" onclick="next()"><i class="fa-solid fa-chevron-right"></i></button>
+            
+        </div>
+    </div>
+</body>
+<script>
+    let bottom=document.querySelector(".bottom");
+    let images=document.querySelectorAll(".center .images .top img");
+    console.log(images)
+    let index=0;
+   let  dots=[]
+console.log(images[index])
+
+for(let i=0;i<images.length;i++)
+{
+    let circle=document.createElement("div");
+    circle.classList.add("circle");
+    bottom.appendChild(circle);
+    circle.addEventListener("click",()=>showimg(i))
+    dots.push(circle)
+    console.log(dots)
+}
+
+function showimg(i)
+{
+    console.log(i)
+images.forEach((img)=>img.style.display='none');
+dots.forEach((dot)=>dot.style.background='transparent')
+  images[i].style.display='block';
+  dots[i].style.background="#eaeaea"
+  index=i
+
+}
+
+    function next()
+    {
+        images[index].style.display='none'
+
+        if(index===images.length-1)
+        {
+            index=0
+        }
+        else{
+            index++
+        }
+        images[index].style.display='block'
+        showimg(index)
+
+    }
+
+     function prev()
+    {
+        images[index].style.display='none'
+
+        if(index===0)
+        {
+            index=images.length-1
+        }
+        else{
+            index--
+        }
+        images[index].style.display='block'
+showimg(index)
+    }
+
+    let time=setInterval(next,2000)
+
+    function playpause(option)
+    {
+        if(option==="pause")
+        {
+            clearInterval(time)
+        }
+        else{
+             time=setInterval(next,2000)
+        }
+    }
+showimg(0)
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="postdate(event)">
+        <input type="text" id="name">
+        <input type="text" id="age">
+        <input type="text" id="course">
+        <br><br>
+        <button type="submit">submit</button>
+    </form>
+
+    <table border="1px solid black" cellspacing="1">
+        <thead>
+            <th>name</th>
+            <th>age</th>
+            <th>course</th>
+        </thead>
+        <tbody id="datarec">
+
+        </tbody>
+    </table>
+
+</body>
+<script>
+
+    function postdate(event) {
+        event.preventDefault();
+
+        let name = document.querySelector("#name").value
+        let age = document.querySelector("#age").value
+        let course = document.querySelector("#course").value
+        let inputlist = [name, age, course];
+        console.log(inputlist)
+        let datarec = document.querySelector("#datarec")
+        let tr = document.createElement("tr");
+        tr = datarec.insertRow()
+
+        tr.insertCell().innerHTML = age
+        tr.insertCell().innerHTML = name
+        tr.insertCell().innerHTML = course
+
+        ///<!-- inputlist.forEach((item) => {
+        ///    let td = document.createElement("td");
+        ///    td.innerHTML = item;
+        ///    tr.appendChild(td)
+        ///    datarec.appendChild(tr)
+        ///}) -->
+
+
+    }
+
+</script>
+
+</html>

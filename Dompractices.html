@@ -1,0 +1,894 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .center {
+            height: 80%;
+            width: 80%;
+            position: relative;
+        }
+
+        .images {
+            height: 100%;
+            width: 100%;
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+
+        }
+
+        .images .top img {
+
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .images .top img:first-child {
+            display: block;
+        }
+
+        button {
+
+            width: 100px;
+            height: 100ppx;
+            position: absolute;
+            border: none;
+            outline: none;
+            background: none;
+            font-size: 3rem;
+            color: #eaeaea;
+            top: 45%;
+            cursor: pointer;
+        }
+
+        .btnright {
+            right: 30px;
+        }
+
+        .btnleft {
+            left: 30px;
+        }
+
+        .bottom {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: -40px;
+        }
+
+        .dot {
+            height: 20px;
+            width: 20px;
+            border: 1px solid #eaeaea;
+            border-radius: 50%;
+            color: #eaeaea;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <div class="images">
+                <div class="top" onmouseenter="playpause('pause')" onmouseleave="playpause('play')">
+                    <img src="./DOM/images/nanroti.jpg" alt="">
+                    <img src="./DOM/images/pannermalaikopta.jpg" alt="">
+                    <img src="./DOM/images/pizza.jpg" alt="">
+                    <img src="./DOM/images/vegbiryani.jpg" alt="">
+                    <img src="./DOM/images/aloo pratha.jpg" alt="">
+                    <img src="./DOM/images/nanroti.jpg" alt="">
+
+                </div>
+
+            </div>
+            <div class="bottom">
+
+            </div>
+            <button class="btnleft" onclick="next()"><i class="fa-solid fa-angle-left"></i></button>
+            <button class="btnright" onclick="prev()"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+    </div>
+</body>
+<script>
+
+    let images = document.querySelectorAll(".top img");
+    console.log(images)
+
+    let index = 0;
+
+    let bottom = document.querySelector(".bottom");
+    let dots = [];
+
+    for (let i = 0; i < images.length; i++) {
+        let dotelm = document.createElement("div");
+        dotelm.classList.add("dot");
+        bottom.appendChild(dotelm);
+        dots.push(dotelm)
+        console.log(dots)
+        dotelm.addEventListener("click", () =>{ showimages(i)})
+
+    }
+
+    function showimages(id) {
+        images.forEach((imge) => imge.style.display = 'none')
+        dots.forEach((dot) => dot.style.background = 'transparent');
+
+        images[id].style.display = 'block';
+        dots[id].style.background = 'white'
+
+        //index = id
+       // console.log(id,index)
+    }
+
+    function next() {
+        images[index].style.display = 'none';
+
+        if (index === images.length - 1) {
+            index = 0
+        }
+        else {
+            index++
+        }
+
+        images[index].style.display = 'block';
+
+        showimages(index)
+    }
+
+    function prev() {
+        images[index].style.display = 'none';
+
+        if (index === 0) {
+            index = images.length - 1
+        }
+        else {
+            index--
+        }
+
+        images[index].style.display = 'block';
+        showimages(index)
+    }
+    //next()
+    //prev()
+
+    let time = setInterval(next, 2000);
+
+    function playpause(option) {
+        if (option === 'pause') {
+            clearInterval(time)
+        }
+        else {
+            time = setInterval(next, 2000)
+        }
+    }
+
+    showimages(0)
+
+</script>
+
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <div class="first">
+                <h2>Deals Start In</h2>
+            </div>
+            <div class="second">
+                <div class="item">
+                    <div class="days">
+                        <h2>00</h2>
+                        <h3>Days</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="hours">
+                        <h2>00</h2>
+                        <h3>Hours</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="minutes">
+                        <h2>00</h2>
+                        <h3>minutes</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="seconds">
+                        <h2>00</h2>
+                        <h3>seconds</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body> -->
+<!-- <script>
+
+    let center = document.querySelector(".center")
+    let second = document.querySelector(".second")
+    let first = document.querySelector(".first")
+    let days = document.querySelector(".days")
+    let hours = document.querySelector(".hours")
+    let minutes = document.querySelector(".minutes")
+    let seconds = document.querySelector(".seconds")
+    let target = new Date(2025, 9, 19);
+    console.log(target)
+
+    setInterval(() => {
+
+        let curr = new Date();
+        console.log(curr)
+        let diff = target - curr;
+        console.log(diff)
+        if (diff > 0) {
+            let num = parseInt((diff) / (1000 * 60 * 60 * 24));
+            days.innerHTML = num < 10 ? '0' + num : num
+
+            num = parseInt((diff) % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+            hours.innerHTML = num < 10 ? '0' + num : num
+
+            num = parseInt((diff) % (1000 * 60 * 60) / (1000 * 60));
+            minutes.innerHTML = num < 10 ? '0' + num : num
+
+            num = parseInt((diff) % (1000 * 60) / (1000));
+            seconds.innerHTML = num < 10 ? '0' + num : num
+        }
+
+    }, 1000)
+
+</script>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form >
+        <input type="text" id="name" placeholder="name">
+        <br><br>
+        <input type="text" id="roll" placeholder="roll">
+        <br><br>
+        <input type="text" id="course" placeholder="course">
+        <br><br>
+        <button onclick="postdata()">submit</button>
+    </form >
+    <table style="width: 200px; height:200px; border:1px solid black">
+        <thead >
+            <tr>Name</tr>
+            <tr>Roll</tr>
+            <tr>course</tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+<script>
+
+    function postdata() {
+       // e.preventDefault()
+        let name = document.querySelector("#name").value
+        let roll = document.querySelector("#roll").value
+        let course = document.querySelector("#course").value
+        console.log(name,roll,course)
+        let tbody = document.querySelector("#tbody")
+
+        let tr = document.createElement("tr");
+
+        tr.forEach(() => {
+            let td = document.createElement("td");
+            console.log(td)
+            td.innerHTML = name
+            td.innerHTML = roll
+
+            td.innerHTML = course
+            console.log(td)
+            tr.appendChild(td)
+            tbody.appendChild(tr);
+        })
+
+    }
+
+</script>
+
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <input type="text" id="name" placeholder="Name"><br><br>
+        <input type="text" id="roll" placeholder="roll"><br><br>
+        <input type="text" id="course" placeholder="course"><br><br>
+        <button onclick="postdata()">submit</button>
+    </form>
+    <table border="1px solid black" cellspacing="0">
+        <thead>
+            <th>name</th>
+            <th>roll</th>
+            <th>course</th>
+
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+<script>
+
+
+    function postdata() {
+        let name = document.querySelector("#name").value;
+        let roll = document.querySelector("#roll").value;
+        let course = document.querySelector("#course").value;
+        let arr = [name, roll, course];
+        console.log(arr)
+        console.log(name, roll, course)
+        let tbody = document.querySelector("#tbody")
+
+        let tr = document.createElement("tr")
+
+        tr = tbody.insertRow();
+        tr.insertCell().innerHTML = name
+        tr.insertCell().innerHTML = roll
+        tr.insertCell().innerHTML = course
+
+
+        // arr.forEach((item) => {
+
+        //     let td = document.createElement("td");
+        //     td.innerHTML = item;
+        //     tr.appendChild(td)
+        //     tbody.appendChild(tr)
+
+        // })
+
+        // //console.log(td)
+        //td.innerHTML = name
+        //tr.appendChild(td)
+        //tbody.appendChild(tr);
+        //
+        //td = document.createElement("td");
+        //td.innerHTML = roll
+        //tr.appendChild(td)
+        //tbody.appendChild(tr);
+        //
+        //td = document.createElement("td");
+        //td.innerHTML = course
+        //console.log(td)
+        //tr.appendChild(td)
+        //tbody.appendChild(tr);
+        //
+    }
+
+</script>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <button onclick="addelm()">Add</button>
+        <button onclick="deleteAll()">deleteAll</button>
+      <button onclick="deletefirst()"> delete first element</button>
+        <div class="center">
+                
+        </div>
+    </div>
+</body>
+<script>
+    let center=document.querySelector(".center")
+    let count=0;
+    let main=document.querySelector(".main")
+  function addelm()
+  {
+
+  let p=document.createElement("p");
+  
+  p.id=`p${count}`;
+
+  p.innerHTML=`this is p ${count}.<span onclick="deleteitem('p${count}')"">x</span>`
+
+  center.appendChild(p);
+  count++;
+
+  }
+
+  function deleteitem (id)
+  {
+
+    center.removeChild(document.getElementById(id))
+
+  }
+
+  function deletefirst()
+  {
+    
+   // console.log(center.childNodes[1])
+    //console.log(center.removeChild(center.childNodes[1]))
+    center.removeChild(center.childNodes[1])
+  }
+
+  function deleteAll()
+  {
+    main.removeChild(center);
+    center=document.createElement("div");
+    main.appendChild(center)
+  }
+
+</script>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <p id="param">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis et, provident consequatur quisquam perferendis dolorum in obcaecati voluptas, esse illo unde deserunt ducimus voluptatibus recusandae dolor! Explicabo a magni perspiciatis.</p>
+
+        <button id="btn" onclick="toggle()">show</button>
+
+    </div>
+</body>
+
+<script>
+
+    function toggle()
+    {
+        let param=document.querySelector("#param");
+        let btn=document.querySelector("#btn")
+
+        if(param.style.display!='none')
+        {
+            param.style.display='none'
+            btn.innerHTML='Hide'
+        }
+        else{
+
+            param.style.display='block'
+            btn.innerHTML='show'
+        }
+
+    } -->
+
+<!-- </script>
+
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="postdata(event)">
+
+        <input type="text" id="name" onchange="getdata(event)" placeholder="Name:"><br><br>
+        <input type="text" id="course" onchange="getdata(event)" placeholder="Course:"><br><br>
+        <input type="text" id="roll" onchange="getdata(event)" placeholder="Roll:"><br><br>
+        <button>click</button>
+
+    </form>
+    <h1 class="hroll">Roll:</h1>
+    <h2 class="hname">Name:</h2>
+    <h2 class="hcourse">Course:</h2>
+</body>
+<script>
+
+
+
+    function getdata(event) {
+        let input = event.target;
+        let heading = document.getElementById(`h${input.id}`);
+        heading.innerHTML = `${input.placeholder} ${input.value}`;
+        // let input = e.target
+        // console.log(input)
+        // let heading = document.getElementById(`h${input.id}`);
+        // heading.innerHTML = `${input.placeholder} ${input.value}`;
+        // //   let heading = document.getElementById(`h${input.id}`)
+        // heading.innerHTML = `${input.placeholder} ${input.value}`
+        // console.log(roll)
+
+    }
+
+    function postdata(e) {
+        e.preventDefault();
+
+        console.log(`
+    
+    Name    : ${document.getElementById("name").value}
+    Course  : ${document.getElementById("course").value}
+    Roll    : ${document.getElementById("roll").value}
+
+    `)
+
+    }
+
+
+</script>
+
+</html> -->
+
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .containner {
+            height: 100vh;
+            width: 100vw;
+            background: coral;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .todoapp {
+            width: 80%;
+            height: 80%;
+            background: white;
+            box-shadow: 2px 2px 4px gray;
+            border-radius: 20px;
+
+        }
+
+        .todoapp .tittle {
+            display: flex;
+            justify-content: center;
+        }
+
+        .todoapp.tittle h2 {
+            margin-top: 10px;
+        }
+
+        .todoapp img {
+
+            height: 40px;
+            width: 90px;
+            object-fit: cover;
+        }
+
+        .input-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background-color: grey;
+            width: 50%;
+            height: 40px;
+            margin: auto;
+        }
+
+        input {
+
+            padding-left: 10px;
+            background: transparent;
+            flex: 1;
+            outline: none;
+            border: none;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            width: 100px;
+            border-radius: 10px;
+            height: 40px;
+            background: coral;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+             margin: 10px 10px 10px 50px;
+            padding: 10px 20px 30px 50px;
+          
+        }
+
+        ul li {
+             margin: 10px 10px 10px 50px;
+            padding: 10px 20px 30px 50px;
+            padding: 10px 20px 30px 50px;
+              position: relative;
+        }
+
+        ul li::before {
+            content: '';
+           height: 28px;
+           width: 28px;
+           position: absolute;
+           top: 12px;
+           left: 8px;
+           background: url("./DOM/images/ci.png") no-repeat center ;
+           background-size: cover;
+          
+        }
+
+        
+         ul li.checked::before{
+            text-decoration: line-through;
+            height: 28px;
+            width: 28px;
+            font-size: 2rem;
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            background: url('./DOM/images/R.png') no-repeat center;
+            background-size: cover;
+
+         }
+         .checked{
+            text-decoration: line-through;
+         }
+         span{
+            float: right;
+            cursor: pointer;
+         }
+
+            </style>
+</head>
+
+<body>
+    <div class="containner">
+        <div class="todoapp">
+            <div class="tittle">
+                <h2>Todo-List </h2><img src="./DOM/images/t.png" alt="">
+            </div>
+
+            <div class="input-btn">
+                <input type="text" id="input">
+                <button id="btn">Add</button>
+            </div>
+            <ul class="list">
+              <li class="checked">hello</li>
+                <li class="checked">hello</li>
+                <li >hello</li>
+                <li >hello</li> 
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+
+    let btn=document.querySelector("#btn");
+    let list=document.querySelector(".list")
+    let input=document.querySelector("#input")
+
+    btn.addEventListener("click",()=>{
+
+        if(input.value=='')
+        {
+            alert("please Enter Somethings to do")
+        }
+        else{
+            let elem=document.createElement("li");
+           // elem.classList.add("checked")
+            elem.innerHTML=`${input.value}`
+            let span=document.createElement("span");
+            span.innerHTML='\u00d7'
+            elem.appendChild(span)
+            list.appendChild(elem)
+        }
+input.value=''
+save()
+    })
+
+    list.addEventListener("click",(e)=>{
+        if(e.target.tagName==="LI")
+        {
+            e.target.classList.toggle("checked")
+        }
+        else if(e.target.tagName==="SPAN")
+        {
+            e.target.parentElement.remove()
+        }
+        save()
+    })
+
+    function save()
+    {
+        localStorage.setItem("data",list.innerHTML)
+    }
+    function show()
+    {
+        list.innerHTML=localStorage.getItem("data")
+    }
+show()
+
+</script>
+
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<form onsubmit="getdata(event)">
+    <input type="text" onkeyup="data(event)" id="name" placeholder="Name">
+    <input type="text" onkeyup="data(event)" id="password" placeholder="password">
+    <input type="text" onkeyup="data(event)" id="email" placeholder="email">
+    <button type="submit">submit</button>
+</form>
+ <h1 id="hname">Name:</h1>
+ <h1 id="hpassword">Password:</h1>
+ <h1 id="hemail">Email:</h1>
+</body>
+<script>
+
+    function data(e)
+    {
+      let input=e.target;
+      let heading=document.getElementById(`h${input.id}`);
+      heading.innerHTML=`${input.placeholder}${input.value}`
+    }
+    function getdata(e)
+    {
+    e.preventDefault()
+    alert(`
+    Name:${document.getElementById("name").value}
+    Password:${document.getElementById("password").value}
+    Email:${document.getElementById("email").value}
+
+    `)
+    }
+
+</script>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let sum=(num1)=>(num2)=>(num3)=>(num4)=>(num5)=>num1+num2+num3+num4+num5
+
+    console.log(sum(100)(200)(300)(400)(500))
+
+</script>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="name">
+    <input type="text" id="email">
+    <input type="text" id="pass">
+    <button id="btn">getdata</button>
+    <table border="1px solid black"> 
+        <thead>
+            <th>
+                name
+            </th>
+            <th>
+                email
+            </th>
+            <th>
+                password
+            </th>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+<script>
+    let btn=document.querySelector("#btn");
+    btn.addEventListener("click",()=>{
+
+        let name=document.querySelector("#name").value
+        let email=document.querySelector("#email").value
+        let pass=document.querySelector("#pass").value
+        let tbody=document.querySelector("#tbody");
+       let data=[name,email,pass]
+
+        let tr=document.createElement("tr");
+     
+         data.forEach((item)=>{
+             let td=document.createElement("td");
+             td.innerHTML=item;
+             tr.appendChild(td)
+             tbody.appendChild(tr)
+        }) 
+       
+
+
+    })
+</script>
+</html> -->

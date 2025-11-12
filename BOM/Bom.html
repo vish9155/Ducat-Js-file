@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>hello Bom</h2>
+    <!-- <h2 onclick="window.history.back()">Back</h2>
+     <h2 onclick="window.history.forward()">Back</h2> -->
+
+    <button onclick="fun()">open</button>
+    <button onclick="closefun()">close</button>
+
+</body>
+<script>
+    let win = window.open("https://www.youtube.com");
+    function fun() {
+
+        //let win2=window.open("https://www.google.com");
+        document.writeln(`${win}`)
+
+    }
+
+    function closefun() {
+
+
+
+        document.writeln(`${window.close(win)}`)
+    }
+
+//window size-> the two property give the size of window or browser;
+
+// window.innerHeight-> it return the height of browser in pixels;
+// window.innerWidth-> it return the width of browser in pixels;
+
+
+
+  //document.writeln(window.innerHeight)-> 
+  //document.writeln(window.innerWidth);
+
+
+  // window.screen-> the window.screen object can be writtten without window prefix;
+
+  // 1.screen.height-> it can be return the height of  visitior screen in pixels;
+  // 2.screen.width-> it can be return the width of  visitor screen in pixels;
+  // 3.screen.availHeight->it can be return the height of  visitior screen in pixels,minus interface feature like a window taskbar;
+  // 4.screen.availWidth->it can be return the width of  visitior screen in pixels,minus interface feature like a window taskbar;
+
+
+  //document.writeln(screen.width)
+  //document.writeln(screen.height)
+  //document.writeln(screen.availHeight)
+  //document.writeln(screen.availWidth);
+
+  //window.location-> the object can be written without prefix;
+
+// 1.location.href-> it return the current url of page
+// 2.location.hostname-> it return the current domain name of web host;
+// 3.location.pathname-> it return the current file or path name of page;
+// 4.location.protocols-> it return the https/htpp on protocol;
+
+  //document.writeln('</br>',location.href)
+  //  document.writeln('</br>',location.host,'<br>');
+ //  document.writeln('</br>',location.pathname,'<br>');
+ //  document.writeln('</br>',location.protocol,'<br>');
+
+//document.writeln(window.history.go())
+//document.writeln(window.history.back())
+
+document.writeln(navigator.cookieEnabled)
+document.writeln(navigator.appCodeName)
+document.writeln(navigator.platform)
+
+</script>
+
+</html>

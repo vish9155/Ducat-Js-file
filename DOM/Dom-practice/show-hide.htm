@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="para" onmouseenter="change()" onmouseleave="leave()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor culpa dignissimos alias porro,
+        commodi voluptatibus rerum provident ipsa suscipit distinctio tempora quis inventore voluptatum laudantium
+        possimus delectus assumenda aspernatur sapiente.</p>
+
+    <button id="btn" onclick="toggle()">show</button>
+    <button onclick="colorchange()">change</button>
+</body>
+<script>
+    let para = document.querySelector(".para");
+    function toggle() {
+        let btn = document.querySelector("#btn")
+        if (para.style.display != 'none') {
+            para.style.display = 'none';
+            btn.innerHTML = 'Hide'
+        }
+        else {
+            para.style.display = 'block';
+            btn.innerHTML = 'show'
+        }
+    }
+
+    function colorchange()
+    {
+        if(para.style.color!='red')
+        {
+            para.style.color = 'red';
+        }
+        else{
+            para.style.color = 'black';
+        }
+    }
+
+    function change()
+    {
+           para.style.color = 'purple';
+    }
+    function leave()
+    {
+           para.style.color = 'aqua';
+    }
+
+</script>
+
+</html>

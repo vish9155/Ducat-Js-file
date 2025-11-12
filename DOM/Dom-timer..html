@@ -1,0 +1,227 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+</style>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <div class="first">
+                <h1> Happy New Year 2026 </h1>
+            </div>
+            <div class="second">
+
+                <div class="item">
+                    <div id="days">
+                        <h3>00</h3>
+                        <h4>Days</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div id="hours">
+                        <h3>00</h3>
+                        <h4>Hours</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div id="minutes">
+                        <h3>00</h3>
+                        <h4>Minutes</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div id="secondss">
+                        <h3>00</h3>
+                        <h4>Seconds</h4>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    let center = document.querySelector(".center")
+    let second = document.querySelector(".second")
+    let first = document.querySelector(".first")
+    let days = document.querySelector("#days")
+    let hours = document.querySelector("#hours")
+    let minutes = document.querySelector("#minutes")
+    let seconds = document.querySelector("#secondss")
+
+    let targetdate = new Date(2026, 0);
+    console.log(targetdate)
+
+    
+
+
+    setInterval(() => {
+        let currtime = new Date();
+        let diff = targetdate - currtime;
+        console.log(diff)
+        if (diff > 0) {
+            let num = parseInt(diff / (1000 * 60 * 60 * 24));
+            days.innerHTML = num < 10 ? "0" + num : num;
+            console.log(num)
+            num = parseInt(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+            hours.innerHTML = num < 10 ? "0" + num : num;
+            console.log(num)
+            num = parseInt(diff % (1000 * 60 * 60) / (1000 * 60));
+            minutes.innerHTML = num < 10 ? "0" + num : num;
+            console.log(num)
+            num = parseInt(diff % (1000 * 60) / (1000));
+            seconds.innerHTML = num < 10 ? "0" + num : num;
+            console.log(num)
+
+        }
+        else {
+        center.removeChild(second);
+        first.innerHTML="WELCOME TO HAPPY NEW YEAR 2026............."
+        }
+    }, 1000)
+
+</script>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .main {
+        width: 100vw;
+        height: 100vh;
+        background: lightcyan;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main .center {
+        width: 80%;
+        height: 80%;
+        background-color: lightsteelblue;
+      
+    }
+
+    .main .center .first {
+        text-align: center;
+        font-size: 1.4rem;
+        color: teal;
+        font-family: cursive;
+        padding: 12px 0;
+    }
+
+    .main .center .second {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .main .center .item {
+        margin: 100px 50px;
+      
+
+    }
+
+    h3 {
+        background-color: lightsalmon;
+        font-size: 1rem;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h4 {
+        background-color: lightgrey;
+        font-size: 1rem;
+        padding: 20px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="main">
+        <div class="center">
+            <div class="first">
+                <h1>Time on Happy new year 2026</h1>
+            </div>
+            <div class="second">
+                <div class="item">
+                    <h3 id="days">00</h3>
+                    <h4>Days</h4>
+                </div>
+                <div class="item">
+                    <h3 id="hours">00</h3>
+                    <h4>Hours</h4>
+                </div>
+                <div class="item">
+                    <h3 id="minutes">00</h3>
+                    <h4>Minutes</h4>
+                </div>
+                <div class="item">
+                    <h3 id="seconds">00</h3>
+                    <h4>Seconds</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let center = document.querySelector(".center")
+    let second = document.querySelector(".second")
+    let first = document.querySelector(".first")
+    let days = document.querySelector("#days")
+    let hours = document.querySelector("#hours")
+    let minutes = document.querySelector("#minutes")
+    let seconds = document.querySelector("#seconds")
+
+    let target_time = new Date(2026, 0);
+
+    setInterval(() => {
+
+        let current_time = new Date();
+        let diff = target_time - current_time;
+
+        if (diff > 0) {
+            let num = parseInt(diff / (1000 * 60 * 60 * 24));
+            days.innerHTML = `${num < 10 ? "0" + num : num}`
+            num = parseInt(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+            hours.innerHTML = num < 10 ? "0" + num : num;
+            console.log(num)
+            num = parseInt(diff % (1000 * 60 * 60) / (1000 * 60));
+            minutes.innerHTML = num < 10 ? "0" + num : num;
+            console.log(num)
+            num = parseInt(diff % (1000 * 60) / (1000));
+            seconds.innerHTML = num < 10 ? "0" + num : num;
+            console.log(num)
+
+        }
+        else {
+            center.removeChild(second);
+            first.innerHTML = "WELCOME TO HAPPY NEW YEAR 2026............."
+        }
+
+    }, 1000)
+
+</script>
+
+</html>

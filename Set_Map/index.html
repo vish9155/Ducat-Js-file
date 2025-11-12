@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,4 +8,65 @@
 <body>
     <script src="script.js"></script>
 </body>
-</html>
+</html> -->
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="res">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, tempora.</h1>
+    <button onclick="toggle()" onmouseenter="hover()" onmouseleave="leave()" id="btn">show</button>
+</body>
+<script>
+
+    let btn = document.querySelector("#btn")
+    let res = document.querySelector(".res");
+    //
+    //function toggle()
+    //{
+    //    if(btn.innerHTML==='show')
+    //    {
+    //        btn.innerHTML="Hide"
+    //        res.style.display="none"
+    //    }
+    //    else{
+    //            btn.innerHTML="show"
+    //        res.style.display="block"
+    //    }
+    //}
+
+    function toggle() {
+        if (res.style.display != "none") {
+            btn.innerHTML = "Hide"
+            res.style.display = "none"
+        }
+        else {
+            btn.innerHTML = "Hide"
+            res.style.display = "block"
+        }
+    }
+
+    function hover()
+    {
+        res.style.color="red"
+        btn.style.color='coral'
+    }
+     function leave()
+    {
+        res.style.color="black"
+        btn.style.color='black'
+    }
+    
+
+
+</script>
+
+</html> -->

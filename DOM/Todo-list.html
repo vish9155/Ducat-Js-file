@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: lightseagreen;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .todoapp {
+        width: 60%;
+        height: 60%;
+        background: #eaeaea;
+        border-radius: 10px;
+        box-shadow: 2px 2px 3px gray;
+        padding: 10px 20px 30px 40px;
+    }
+
+    h2 {
+        margin: 20px;
+    }
+
+    .tittle {
+        color: green;
+        font-size: 2rem;
+        text-align: justify;
+
+    }
+
+    .tittle img {
+        width: 100px;
+        height: 30px;
+        margin-left: 15px;
+
+    }
+
+    .input-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(90, 83, 83);
+        width: 80%;
+        margin: auto auto 50px auto;
+        border-radius: 12px;
+        height: 40px;
+     
+    }
+
+    input {
+        background: transparent;
+        border: 0;
+        outline: 0;
+        flex: 1;
+        padding: 5px;
+    }
+
+    button {
+        border: 0;
+        outline: 0;
+        background-color: rgb(240, 92, 38);
+        border-radius: 10px;
+        height: 40px;
+        width: 100px;
+        box-shadow: 1px 1px 4px coral;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: coral;
+    }
+
+    ul {
+        list-style: none;
+        margin: 10px 10px 10px 100px;
+        overflow: scroll;
+        width: 100%;
+        height:60%;
+    }
+
+    ul::-webkit-scrollbar{
+        display: none;
+    }
+
+    ul li {
+        position: relative;
+        padding: 10px 17px 20px 50px;
+       
+    }
+
+    ul li::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 28px;
+        height: 28px;
+        background: url("../images/ci.png") no-repeat center;      
+        background-size: contain;
+
+    }
+
+    .checked {
+        text-decoration: line-through;
+    }
+
+    ul li.checked::before {
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        top: 17px;
+        left: 10px;
+        background: url("../images/R.png") no-repeat center;        
+        background-size: contain;
+
+    }
+    span{
+       
+        font-size: 1.5rem;
+        position: absolute;
+        right: 100px;
+        border-radius: 100%;
+    }
+    span:hover{
+        cursor: pointer;
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="div todoapp">
+            <h2 class="tittle">Todo-List <img src="../images/t.png" alt=""></h2>
+            <div class="input-btn">
+                <input type="text" id="inputbox" placeholder="Enter Somethings here........." >
+                <button oncli id="btn">Add</button>
+            </div>
+            <ul class="list-containner">
+                
+
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    let input=document.querySelector("#inputbox")
+    let btn=document.querySelector("#btn")
+    let list=document.querySelector(".list-containner")
+
+    btn.addEventListener("click",(event)=>{
+        let val=input.value;
+       
+        if(val==="")
+        {
+            alert("Please enter somethings what to do.........")
+        }
+        else{
+
+      let li=document.createElement("li");
+      li.innerHTML=`${val}`;
+      list.appendChild(li)
+  
+      let span=document.createElement("span");
+      span.innerHTML='\u00d7'
+      li.appendChild(span)
+
+        }
+        val=" "
+        saved()
+    })
+    list.addEventListener("click",(event)=>{
+        if(event.target.tagName==="LI")
+        {
+            event.target.classList.toggle("checked")
+        }
+        else if(event.target.tagName==="SPAN")
+        {
+            event.target.parentElement.remove()
+        }
+        saved()
+    })
+
+   
+    function saved()
+    {
+        localStorage.setItem("data",list.innerHTML)
+    }
+    function show()
+    {
+        list.innerHTML=localStorage.getItem("data")
+    }
+show()
+</script>
+</html>

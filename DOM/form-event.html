@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .main {
+        width: 100vw;
+
+        background: lightblue;
+    }
+
+    .center {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
+    .center h2,
+    .center h3 {
+
+        background-color: gray;
+        color: white;
+        padding: 20px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+
+    .form input {
+        padding: 20px;
+        background-color: gray;
+        margin-bottom: 5px;
+        padding: 15px;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        color: white;
+        font-weight: 900;
+        border: none;
+
+    }
+
+    .form input::placeholder {
+        color: white;
+    }
+
+    button {
+        width: 100%;
+        background-color: brown;
+        border: none;
+        padding: 25px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<body>
+    <div class="main">
+
+        <div class="center">
+            <h2 class="tittle">This is My Form</h2>
+            <h3 id="hname">Name:</h3>
+            <h3 id="hemail">Email:</h3>
+            <h3 id="hpassword">Password:</h3>
+            <h3 id="hcity">City:</h3>
+            <h3 id="hstate">State:</h3>
+            <h3 id="hpin">Pin-Code:</h3>
+            <div class="form">
+                <form onsubmit="postdata(event)">
+                    <input type="text" name="name" id="name" placeholder="Name:" onfocus="fun1(event)"
+                        onblur="fun2(event)" onchange="fun3(event)">
+                    <input type="email" name="email" id="email" placeholder="Email:" onfocus="fun1(event)"
+                        onblur="fun2(event)" onchange="fun3(event)">
+                    <input type="password" name="password" placeholder="Password:" id="password" onfocus="fun1(event)"
+                        onblur="fun2(event)" onchange="fun3(event)">
+                    <input type="text" name="city" id="city" placeholder="City" onfocus="fun1(event)"
+                        onblur="fun2(event)" onchange="fun3(event)">
+                    <input type="text" name="state" id="state" placeholder="State" onfocus="fun1(event)"
+                        onblur="fun2(event)" onchange="fun3(event)">
+                    <input type="number" name="pin" id="pin" placeholder="PinCode:" onfocus="fun1(event)"
+                        onblur="fun2(event)" onchange="fun3(event)">
+                    <button type="submit">submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function fun1(event) {
+        event.target.style.background = "pink";
+        event.target.style.color = "black";
+    }
+    function fun2(event) {
+        event.target.style.background = "gray";
+        event.target.style.color = "white";
+    }
+    function fun3(event) {
+        let input = event.target;
+        let heading = document.getElementById(`h${input.id}`);
+        heading.innerHTML = `${input.placeholder} ${input.value}`;
+    }
+
+    function postdata(event) {
+        event.preventDefault();
+
+        alert(`
+        Name     :${document.getElementById("name").value}
+        Email    :${document.getElementById("email").value}
+        Password :${document.getElementById("password").value}
+        City     :${document.getElementById("city").value}
+        State    :${document.getElementById("state").value}
+        PinCode  :${document.getElementById("pin").value}
+        `)
+    }
+</script>
+
+</html>

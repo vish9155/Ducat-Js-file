@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <button onclick="deletefirst()">deletefirst</button>
+            <button onclick="deleteAll()">deleteAll</button>
+            <div class="first">
+                <input type="text" id="input">
+                <button onclick="create()">create</button>
+            </div>
+            <ul class="listcontainer">
+                
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    let listcontainer = document.querySelector(".listcontainer");
+    let center = document.querySelector(".center");
+    let input = document.querySelector("#input")
+    let count = 1
+    function create() {
+        let inputval = input.value
+        if (inputval === '') {
+            alert("please enter some data")
+        }
+        else {
+
+
+            let list = document.createElement("li");
+            list.id = `li${count}`;
+            list.innerHTML = `${inputval}<span style="float:'right'" onclick=deleteitem(('li${count}'))>x</span>`
+            count++
+            listcontainer.appendChild(list)
+        }
+
+    }
+
+    function deleteitem(id) {
+        console.log(id)
+       listcontainer.removeChild(document.getElementById(id))
+
+    }
+
+    function deletefirst()
+    {
+        console.log(listcontainer.childNodes)
+        listcontainer.removeChild(listcontainer.childNodes[1])
+    }
+    function deleteAll()
+    {
+        center.removeChild(listcontainer);
+        listcontainer=document.createElement("ul");
+        listcontainer.classList.add("listcontainer");
+        center.appendChild(listcontainer)
+    }
+
+</script>
+
+</html>

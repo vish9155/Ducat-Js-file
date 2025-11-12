@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .main {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(141, 201, 238);
+    }
+
+    .center {
+        width: 90%;
+        height: 90%;
+        box-shadow: 0 0 1px lightcoral;
+        border-radius: 20px;
+        background-color: lightgreen;
+    }
+
+    .center .tittle {
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0px 0px 1px lightblue;
+        color: rgb(2, 110, 110);
+        font-size: 2rem;
+        background-color: lightslategrey;
+
+    }
+
+    .form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form input {
+        margin: 10px 0;
+        height: 30px;
+        padding: 2px;
+        border-radius: 5px;
+        width: 30%;
+    }
+
+    #textarea {
+        width: 100%;
+        height: 100%;
+        color: black;
+        background-color: lightgray;
+        text-align: justify;
+    }
+
+    #textarea::placeholder {
+
+        color: black;
+        font-weight: 600;
+
+    }
+
+    button {
+        width: 20%;
+        height: 30px;
+        background-color: coral;
+        box-shadow: 0 0 1px chocolate;
+        cursor: pointer;
+        font-size: 1rem;
+        margin: 10px 0;
+
+    }
+
+    .tabledata {
+        width: 100%;
+        height: 100%;
+        background: lightseagreen;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<body>
+
+
+    <form onsubmit="postdata(event)">
+        <input type="text" name="name" placeholder="First Name:" id="first">
+
+        <input type="text" name="name" placeholder="Last Name:" id="last">
+
+        <input type="text" name="name" placeholder="Email" id="email">
+
+        <input type="tel" pattern="[6-9]{1}[0-9]{9}" placeholder="Phone no:" name="name" id="phone">
+        <div class="feed">
+
+
+            <button type="submit">submit</button>
+
+
+    </form>
+
+
+    <table border="1px solid black " cellspacing="0">
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Password</th>
+        </thead>
+        <tbody id="recivedata">
+
+        </tbody>
+    </table>
+
+
+
+
+
+    <script>
+
+
+
+
+
+
+        //function postdata(event) {
+        //    event.preventDefault()
+        //    let recive = document.querySelector("#recivedata")
+        //    let first = document.querySelector("#first").value
+        //    let last = document.querySelector(" #last").value
+        //    let email = document.querySelector("#email").value
+        //    let phone = document.querySelector("#phone").value
+        //console.log(recive, first, last, email, phone)
+        //    // let tr = document.createElement("tr");
+        //    let tr = recive.insertRow()
+        //    tr.insertCell().innerHTML = first
+        //    tr.insertCell().innerHTML = last
+        //    tr.insertCell().innerHTML = phone
+        //    tr.insertCell().innerHTML = email
+        //    //  recive.appendChild(tr)
+
+        //}
+
+        function postdata(event) {
+            event.preventDefault()
+            let recive = document.querySelector("#recivedata")
+            let first = document.querySelector("#first").value
+            let last = document.querySelector(" #last").value
+            let email = document.querySelector("#email").value
+            let phone = document.querySelector("#phone").value
+            let arr = [first, last, email, phone];
+            console.log(arr)
+            console.log(recive, first, last, email, phone)
+            let tr = document.createElement("tr");
+
+            //<!-- let tname = document.createElement("td");
+            //tname.innerHTML = first;
+           // tr.appendChild(tname) -->
+
+
+            arr.forEach((item) => {
+                let td = document.createElement("td");
+                td.innerHTML = item
+                tr.appendChild(td)
+                recive.appendChild(tr)
+
+            })
+
+            // <!-- tlast.innerHTML=last;
+            // tr.appendChild(tlast)
+
+            //  let temail=document.createElement("td");
+            // temail.innerHTML=email;
+            // tr.appendChild(temail)
+
+            //  let tphone=document.createElement("td");
+            // tphone.innerHTML=phone;
+            // tr.appendChild(tphone) -->
+            //  recive.appendChild(tr)
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

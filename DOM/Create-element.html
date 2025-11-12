@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .main {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: lightgray;
+    }
+
+    .main .center {
+
+        width: 100%;
+        height: 100%;
+        background-color: lightblue;
+    }
+
+    .center .first {
+        width: 33%;
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+    }
+
+    .center .first button {
+        border: none;
+        padding: 15px;
+        box-shadow: 0 0 1px gray;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+
+    .second {
+        margin: 10px 50px;
+        padding: 20px;
+        overflow: scroll;
+        color: black;
+        width: 80%;
+        height: 80%;
+
+    }
+
+    .second::-webkit-scrollbar {
+        display: none;
+    }
+
+    .second p {
+        margin: 10px 0;
+        padding: 10px;
+        background-color: lightcyan;
+        text-align: justify;
+    }
+
+    .icon {
+        float: right;
+        cursor: pointer;
+    }
+
+    .icon:hover {
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <div class="first">
+                <button onclick="create()">Create</button>
+                <button onclick="deletefirst()">DeleteFirst</button>
+                <button onclick="DeleteAll()">DeleteAll</button>
+            </div>
+            <div class="second">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let second = document.querySelector(".second");
+        let center = document.querySelector(".center");
+        let count = 1;
+        function create() {
+            let p = document.createElement("p");
+            p.id = `p${count}`
+            p.innerHTML = `This is a paragrpah ${count} <span> <i class="fa-solid fa-trash icon" onclick="deleteitem('p${count}')" ></i> </span> `
+            count++
+            second.appendChild(p);
+
+        }
+
+        function deleteitem(id) {
+            console.log(id)
+            second.removeChild(document.getElementById(id))
+        }
+
+        function deletefirst() {
+            console.log(second.childNodes)
+          if(second.childNodes.length>1)
+          {
+            console.log(second.childNodes)
+            second.removeChild(second.childNodes[1])
+          }
+        }
+
+        function DeleteAll()
+        {
+            center.removeChild(second);
+            second=document.createElement("div");
+            second.classList.add("second");
+            center.appendChild(second)
+        }
+    </script>
+</body>
+
+</html>

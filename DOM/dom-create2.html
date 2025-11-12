@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span{
+        float: right;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="mani">
+        <div class="center">
+            <input type="text" id="input" placeholder="enter something">
+            <button onclick="create()">create</button>
+            <button onclick="deletefirst()">deletefirst</button>
+            <button onclick="deleteAll()">deleteAll</button>
+            <ul class="list">
+
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    let center=document.querySelector(".center");
+    let list=document.querySelector(".list");
+    let input=document.querySelector("#input");
+    let eid=1;
+
+    function create()
+    { 
+        if(input.value=="")
+        {
+            alert("enter some data")
+        }
+      else{
+          let li=document.createElement("li");
+          li.id=`li${eid}`
+        li.innerHTML=`${input.value}${eid}<span onclick="deleteelement('li${eid}')">x</span>`
+        list.appendChild(li)
+        eid++
+      }
+    }
+    function deleteelement(id)
+    {
+        list.removeChild(document.getElementById(id))
+    }
+
+function deletefirst()
+{
+    console.log(list.childNodes)
+   list.removeChild(list.childNodes[1])
+}
+function deleteAll()
+{
+    center.removeChild(list)
+    list=document.createElement("ul");
+    center.appendChild(list)    
+}
+</script>
+</html>

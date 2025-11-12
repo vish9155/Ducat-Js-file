@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <h1>hello</h1>
+        <div class="child1">
+            <h2>child1</h2>
+            <div class="child2">
+                    <h2>child2</h2>
+                <div class="child3">
+                        <h2>child3</h2>
+                    <div class="child4">
+                            <h2>child4</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+let main=document.querySelector(".main");
+
+let child1=document.querySelector(".child1")
+let child2=document.querySelector(".child2")
+let child3=document.querySelector(".child3")
+let child4=document.querySelector(".child4")
+
+main.addEventListener("click",()=>{
+    alert('hello main')
+},true)
+
+
+child1.addEventListener("click",()=>{
+    alert('hello1')
+},true)
+
+child2.addEventListener("click",()=>{
+    alert('hello2')
+},true)
+
+child3.addEventListener("click",()=>{
+    alert('hello3')
+},true)
+
+child4.addEventListener("click",(e)=>{
+    alert('hello4')
+    e.stopPropagation()
+},true)
+
+    
+</script>
+</html>
